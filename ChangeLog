@@ -1,0 +1,4 @@
+06/03/2007 - Minor bug solved. Floiting point error  when dividing by zero in F-measure calculation.
+08/04/2007 - Minor bug solved. Seg fault removed, variable clear in destructor produced a seg fault since varible didnt exist a that point.
+08/04/2007 - Now data can be added element by element by means of the library.
+08/04/2007 - Data matrix can be dump into a file.
