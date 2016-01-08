@@ -3,7 +3,7 @@
     Copyright (C) 2005 - Jordi Adell - TALP / UPC
 -----------------------------------------------------------------------------------
                     GNU GENERAL PUBLIC LICENSE
-		        Version 2, June 1991
+		        Version 3, 29 June 2007
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
