@@ -23,7 +23,19 @@
 
 #include "DTree.h"
 
+   
+void disclaimer(const std::string &prog)
+{
+  cout << prog << " Copyright (C) 2005 - Jordi Adell" << endl;
+  cout << "This program comes with ABSOLUTELY NO WARRANTY." << endl;
+  cout << "This is free software, and you are welcome to redistribute it" << endl;
+  cout << "under certain conditions." << endl;
+}
+
+
 void usage(string prog){
+  disclaimer(prog);
+  cout << endl;
   cout << "--------------------------------" << endl;
   cout << prog <<  "("<< DTREE_VERSION  << "), training a decision tree" << endl;
   cout << "--------------------------------" << endl;
@@ -42,8 +54,6 @@ void usage(string prog){
        << "\t-h Print this help" << endl
        << endl;
 }
-   
-
 
 // -- Main --------------------
 int main(int argc, const char **argv){
