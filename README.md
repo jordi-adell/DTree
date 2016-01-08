@@ -77,11 +77,16 @@ must have two columns, on first one the name of the field is specified
 and on second one the type of the field (float, enum).
 
 Example:
-   sepallength float
-   sepalwidth float
-   petallength float
-   petalwidth float
-   class enum
+
+  sepallength float
+   
+  sepalwidth float
+   
+  petallength float
+  
+  petalwidth float
+  
+  class enum
 
 
 ### Data file
