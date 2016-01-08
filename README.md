@@ -128,5 +128,6 @@ created the tree will stop growing.
 ### Error type 
    This option is used to choose the minimisation function. Default is
 likelihood but also Root Mean Square Error and percentage of correctly
-classified elements can be used.  If you need more help you can
-contact me at jadell@gps.tsc.upc.edu
+classified elements can be used.
+
+If you need more help you can contact me at adellj@gmail.com
