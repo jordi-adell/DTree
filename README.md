@@ -113,7 +113,8 @@ field. Columns mush be separated by ' '.
    Name of the files (as written in description file) that has to be
 predictee by the tree.  Example: class
 
-### Sections Floats fields will be splitted in sections, in order to
+### Sections
+   Float fields will be splitted in sections, in order to
    allow question such as Is petallength > 2.6. The bigger this number
    is the more questions the tree will handle, and the tree can better
    fit the training data. However it will make the training procedure
