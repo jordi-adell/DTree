@@ -1,6 +1,6 @@
 # DTree
 
-*--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
     DTree Is a Decision Tree which can do Classification and also Regression.
     Copyright (C) 2005 - Jordi Adell - TALP / UPC
 -----------------------------------------------------------------------------------
@@ -19,19 +19,19 @@
 
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
-/-------------------------------------------------------------------------------*/
+-------------------------------------------------------------------------------
 
 DTree has been developed to generate decision trees which can
 perform either classification and regression. It is supplied under the
 GNU General Public License and is programed in C++.
 	
 
-Download
+#Download
 ========
-  You can dowload the source code from LaFarga here: https://projectes.lafarga.cat/projects/dtree/
+  You can dowload the source code from GitHub here: https://github.com/jordi-adell/DTree
 
 
-Help
+#Help
 ====
    It provides a binary for training trees and another one to test them,
 The main code is inside a library (libDTree) that can be used by other
@@ -71,7 +71,7 @@ User Documentation:
 
      -------------------------------------------------------------------------
 
-*** Description File
+### Description File
    A text file containing a row for each field in the data file. Each row
 must have two columns, on first one the name of the field is specified
 and on second one the type of the field (float, enum).
@@ -84,39 +84,47 @@ Example:
    class enum
 
 
-*** Data file
+### Data file
    A text file with rows meaning elements and a column for each
 field. Columns mush be separated by ' '.
 
-Example:
+* Example:
+* 
    5.1 3.5 1.4 0.2 Iris-setosa
+
    4.9 3.0 1.4 0.2 Iris-setosa
+   
    4.7 3.2 1.3 0.2 Iris-setosa
+   
    4.6 3.1 1.5 0.2 Iris-setosa
+   
    5.0 3.6 1.4 0.2 Iris-setosa
+   
    5.4 3.9 1.7 0.4 Iris-setosa
+   
    4.6 3.4 1.4 0.3 Iris-setosa
+   
    5.0 3.4 1.5 0.2 Iris-setosa
 
-*** Output tree
+### Output tree
    The name of the file where the tree will be written in.
 
-*** Predictee field
+### Predictee field
    Name of the files (as written in description file) that has to be
 predictee by the tree.  Example: class
 
-*** Sections Floats fields will be splitted in sections, in order to
+### Sections Floats fields will be splitted in sections, in order to
    allow question such as Is petallength > 2.6. The bigger this number
    is the more questions the tree will handle, and the tree can better
    fit the training data. However it will make the training procedure
    slower and may lead to over-fitting.  
 
-*** Stopping Criteria (-s) 
+### Stopping Criteria (-s) 
    The number of elements in the leaf is used as stopping criteria. If no
 more nodes with a number of elements bigger than this number can be
 created the tree will stop growing.
 
-*** Error type 
+### Error type 
    This option is used to choose the minimisation function. Default is
 likelihood but also Root Mean Square Error and percentage of correctly
 classified elements can be used.  If you need more help you can
