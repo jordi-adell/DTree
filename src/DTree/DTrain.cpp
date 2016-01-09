@@ -43,9 +43,9 @@ void usage(string prog){
   cout << "\t-d Data file" << endl 
        << "\t-c Description file" << endl 
        << "\t-t Output tree file" << endl
-       << "\t-p Predictee fields (def: 0)" << endl 
+       << "\t-p Predictee field name (def: 0)" << endl 
        << "\t-r Number of section for float fields (def: 10)" << endl 
-       << "\t-b Balance, minimum percentage of elements in a node (def: 0)" << endl 
+       << "\t-b Balance, minimum percentage of elements in a node (def: 0.1)" << endl 
        << "\t-s Minumum number of elements in a leaf (stop criteria) (def: 50)" << endl 
        << "\t-e Errortype. Options are: entropy, rmse, correlation, correct" << endl
        << "\t-i Information file, with results" << endl
