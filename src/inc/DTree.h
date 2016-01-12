@@ -45,7 +45,12 @@
 #define INF 100000000
 #define PI 3.14159265
 
+#ifdef PACKAGE_VERSION
 #define DTREE_VERSION PACKAGE_VERSION
+#else
+#define DTREE_VERSION 1.5
+#endif
+
 #ifndef SOFT_VERSION
 #define SOFT_VERSION 
 #endif 
