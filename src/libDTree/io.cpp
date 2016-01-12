@@ -242,7 +242,7 @@ bool DTree::saveTree(ofstream &fout, double node){
       /*       if (prediction.size() > 0)
 	       fout << " ";*/
       for (it=prediction.begin(); it!=prediction.end(); it++)
-	fout << " " << code.decodify((uint)it->first) << " " << it->second;
+	fout << " " << code.decodify(static_cast<unsigned short int>(it->first)) << " " << it->second;
       fout << endl;
       
     }else if (fieldsType[tree.at(node).getField()].first == FLT){
