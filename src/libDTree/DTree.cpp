@@ -424,7 +424,7 @@ bool DTree::train(Leaf l){
 /// node means the starting node to ask questions, so
 /// different subtrees could be eventually evaluated. Here
 /// it is used for recursive puroses
-double DTree::predictLeaf (vector<float> &element, double node){
+double DTree::predictLeaf (const vector<float> &element, double node) const {
    if (tree.at(node).getType() == LEAF){
     return node;
    }else if(tree.at(node).getType() == NONE){
@@ -441,11 +441,10 @@ double DTree::predictLeaf (vector<float> &element, double node){
 }
 
 bool DTree::setStatistics(){
-  vector<Question>::iterator it_tree;
-  vector<vector<float> >::iterator it_data;
+  vector<vector<float> >::const_iterator it_data;
   multimap<double, unsigned long> nodes;  // nodes[node]=data_index;
   pair<multimap<double, unsigned long>::iterator, multimap<double, unsigned long>::iterator> range;
-  multimap<double, unsigned long>::iterator it_nodes, it_range;
+  multimap<double, unsigned long>::iterator it_nodes;
   vector<bool> node;
   set<double> leaflist;
   set<double>::iterator it_llist;

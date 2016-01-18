@@ -24,17 +24,17 @@
 #include "DTree.h"
 
 
-void DTree::error(string msg, int value){
+void DTree::error(string msg, int value) const {
   cerr << "DTree (" << DTREE_VERSION << ") [ERROR]: " << msg << " " <<  endl;
   //  exit(value);
 }
 
-void DTree::warn(string msg){
+void DTree::warn(string msg) const {
   cerr << "DTree (" << DTREE_VERSION <<  ") [WARNING!]: " << msg << " " << endl;
 }
 
 
-bool DTree::errorcheck(){
+bool DTree::errorcheck() const {
   if (predictee >= (signed int) fieldsType.size()){
     ostringstream msg;
     msg << "Predictee out of range (";

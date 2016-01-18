@@ -37,16 +37,32 @@ private:
 
 public:
    typedef vector<Question>::iterator iterator;
-   Question emptynode;
+   mutable Question emptynode;
 
-
-   Question& at(double i){ 
+   const Question& at(double i) const {
      if (index.find(i) != index.end())
-       return tree[index[i]]; 
-     else
-       return emptynode; 
+     {
+       unsigned long int index_ = index.at(i);
+       if (index_ < tree.size())
+       {
+	 return tree.at(index_);
+       }
+     }
+     return emptynode;
    }
    
+   Question& at(double i) {
+     if (index.find(i) != index.end())
+     {
+       unsigned long int index_ = index.at(i);
+       if (index_ < tree.size())
+       {
+	 return tree.at(index_);
+       }
+     }
+     return emptynode;
+   }
+
    
    // note that nodes in vector arent sorted.
    void inline add(Question q, double node){
@@ -99,15 +115,13 @@ public:
       return os;
     }
    
-   SparseTree(){
-     emptynode = Question();
+   SparseTree() {
      last=0;
      index[0]=0;
      tree.push_back(Question(LEAF,-1,-1));
    }
    
-   SparseTree(unsigned long int num, Question q){
-     emptynode = Question();
+   SparseTree(unsigned long int num, Question q) {
      last=0;
      tree =  vector<Question>(num,q);
      for (unsigned long int i=0; i<num; i++)
@@ -117,8 +131,6 @@ public:
    ~SparseTree(){}
 
 };
-
-
 
 
 

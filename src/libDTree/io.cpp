@@ -419,8 +419,8 @@ bool DTree::loadTree(ifstream &fin, double node){
 /// It writes the prediction of the tree 
 /// corresponding to the data loades into the 
 /// the outfile
-bool DTree::writeAnswers(string outfile, bool onscreen=false){
-   vector<vector<float> >::iterator it_data;
+bool DTree::writeAnswers(string outfile, bool onscreen=false) const {
+   vector<vector<float> >::const_iterator it_data;
    ofstream fout(outfile.c_str());
    float node;
   
@@ -489,7 +489,7 @@ string DTree::getAnswer(vector<string> element){
 }
 
 
-float DTree::getAnswerProb(vector<string> element){
+float DTree::getAnswerProb(vector<string> element) const{
   vector<float> felement;
   vector<string>::iterator it;
   int i=0;
@@ -505,7 +505,7 @@ float DTree::getAnswerProb(vector<string> element){
 }
 
 
-float DTree::getAnswerProb(vector<float> element){
+float DTree::getAnswerProb(vector<float> element) const {
 
   double node = predictLeaf(element);
   return(tree.at(node).getValuePrediction());

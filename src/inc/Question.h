@@ -106,7 +106,7 @@ class Question {
     // \brief Returns the answer for value v in any case
     // \brief It calls askENU and askFLT.
 
-    bool inline ask(vector<float> element){
+    bool inline ask(vector<float> element) const{
       return ask (element.at(getField()));
     }
 
@@ -131,14 +131,14 @@ class Question {
     inline short int getType() const {return type;}
     inline float getEntropy() const {return entropy;}
     inline int getSize() const {return numelem;}
-    inline map<float,float> getPrediction(){return prediction;}
-    inline float getPrediction(float k){
+    inline map<float,float> getPrediction() const {return prediction;}
+    inline float getPrediction(float k) const {
       if (prediction.find(k) != prediction.end()) 
-	return prediction[k];
+	return prediction.at(k);
       else
 	return 0;
     }
-    inline float getValuePrediction(){ return getPrediction(getValue()); }
+    inline float getValuePrediction() const { return getPrediction(getValue()); }
 
 
 

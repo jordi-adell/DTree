@@ -94,7 +94,7 @@ class DTree {
   bool train(Leaf l);
   bool setStatistics();
   float entropy(vector<bool> l);  
-  bool writeAnswers(string outfile,bool onscreen);
+  bool writeAnswers(string outfile,bool onscreen) const;
   bool isLoaded();
 
   // io.cpp
@@ -108,8 +108,8 @@ class DTree {
   string getAnswer(vector<string> element);
   string getStringAnswer(vector<float > element);
   float  getFloatAnswer (vector<string> element);
-  float getAnswerProb(vector<string> element);
-  float getAnswerProb(vector<float> element);
+  float getAnswerProb(vector<string> element) const;
+  float getAnswerProb(vector<float> element) const;
   
   // dump.cpp   // dumping functions, for debuging and info.
   void dumpTree (double begin=0,string tab="");
@@ -154,7 +154,7 @@ class DTree {
   // variable members
   vector<dataElement>  data;
   SparseTree tree;
-  EnumCode code;
+  mutable EnumCode code;
   vector <FieldDef> fieldsType;
   vector <string> fieldsName;
   map <string,int> numFieldsName;
@@ -165,7 +165,7 @@ class DTree {
   bool split(Leaf l, SparseTree& tree, double nleaf);
   size_t buildQuestionList(unsigned int sections, set<DTree::Question> &Qlist);
   map<float,float> calculateLeafValue(Leaf l);
-  double predictLeaf (vector<float> &element, double node=0);
+  double predictLeaf (const vector<float> &element, double node=0) const;
   float nodeValue(vector<bool> &l);
 
   // stop criterias
@@ -175,9 +175,9 @@ class DTree {
   bool stopE(int nq,vector<bool> &elements);
 
   // Checking errors before training
-  bool errorcheck();
-  void error(string msg, int value=-1);
-  void warn(string msg);
+  bool errorcheck() const;
+  void error(string msg, int value=-1) const;
+  void warn(string msg) const;
 
 
   // parameters of the algorithm

@@ -52,8 +52,11 @@ class EnumCode {
     return codif[element];
   }
 
-  string decodify(unsigned short int element){
-    return decod[element];
+  const string& decodify(unsigned short int element) const {
+    if (decod.find(element) != decod.end())
+      return decod.at(element);
+    else
+      return "";
   }
 
   void dumpCodif();
