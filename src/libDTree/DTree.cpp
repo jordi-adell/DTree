@@ -328,9 +328,20 @@ map<float,float> DTree::calculateLeafValue(Leaf l){
 	cumsum += it_data->at(predictee);
 	cumsum2 += it_data->at(predictee) * it_data->at(predictee);
       }
-    if (flcounts == 1) predictions[cumsum/flcounts] = 0;
-    else predictions[cumsum/flcounts] = cumsum2/flcounts - cumsum*cumsum/(flcounts*flcounts);
+    if (flcounts <= 1)
+    {
+      predictions[cumsum/flcounts] = 0;
+    }
+    else
+    {
+      double mean = cumsum/flcounts;
+      double var = cumsum2/flcounts - mean*mean;
+      if (var < 0) var = 0;
+      double stddev = sqrt(var);
+      predictions[cumsum/flcounts] = stddev;
+    }
   }
+
   return(predictions);
 }
 
