@@ -317,7 +317,6 @@ map<float,float> DTree::calculateLeafValue(Leaf l){
     }
     for (it_counts=counts.begin(); it_counts != counts.end(); it_counts++){
       predictions[it_counts->first] = it_counts->second*1.0F / size;
-      //      cout << "LEAF: value:("<< predictee << ") " << it_counts->first << "=" << code.decodify((int)it_counts->first) << " prob: " << it_counts->second << "/" << size << "::" << predictions[it_counts->first] << endl;
     }
       
   }else if(fieldsType[predictee].first == FLT){

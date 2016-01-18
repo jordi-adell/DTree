@@ -204,10 +204,10 @@ bool DTree::saveTree(ofstream &fout, double node){
   }
 
   if (tree.at(node).getType() != LEAF){   
-    /*    cerr << node << "\t" << tree.size() << "\t" << tree.lastnode() << "\t" 
-	 << numeric_limits<unsigned long int>::min() << "\t" 
-	 << numeric_limits<unsigned long int>::max() << endl;
-    */
+    //    cerr << node << "\t" << tree.size() << "\t" << tree.lastnode() << "\t"
+    //	 << numeric_limits<unsigned long int>::min() << "\t"
+    //	 << numeric_limits<unsigned long int>::max() << endl;
+
     
     fout  << fieldsName.at((tree.at(node)).getField()) << " "; // << tree.at(node).getType();
     if (tree.at(node).getType() == ENU)
