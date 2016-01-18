@@ -436,8 +436,8 @@ bool DTree::writeAnswers(string outfile, bool onscreen=false) const {
    else if(fieldsType.at(predictee).first == ENU)
      for (it_data=data.begin(); it_data!=data.end(); it_data++){
        node = predictLeaf(*it_data);
-       fout << code.decodify((int)tree.at(node).getValue()) << endl;
-       if (onscreen) cout << code.decodify((int)tree.at(node).getValue()) << " ";
+       fout << code.decodify(static_cast<int>(tree.at(node).getValue())) << endl;
+       if (onscreen) cout << code.decodify(static_cast<int>(tree.at(node).getValue())) << " ";
      }else{
        cerr << "ERROR: Wrong field type at 'writeAnswers'" << endl;
        fout.close();
@@ -461,7 +461,7 @@ string DTree::getStringAnswer(vector<float> element){
     svalue << value;
     return (svalue.str());
   }else
-    return (code.decodify((int)value));
+    return (code.decodify(static_cast<int>(value)));
 }
 
 float DTree::getFloatAnswer(vector<string> element){
