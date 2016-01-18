@@ -120,7 +120,11 @@ class Question {
       case DTree::LEAF:
 	cerr << "You are asking in a LEAF, you can't do this" << endl;
 	exit(1);
-      default:
+	break;
+	case DTree::NONE:
+	  cerr << "You are accessing an unitilised node" << endl;
+	  exit(1);
+	default:
 	cerr << "Value out of format" << endl;
 	exit(1);
       }
