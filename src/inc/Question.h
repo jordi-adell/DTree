@@ -83,11 +83,13 @@ class Question {
     }
     Question (short int t, map<float,float> p, int f, int num=0, float e=0.0F){
       float bestp=0, bestv=-1;
+      bool set = false;
       map<float,float>::iterator it;
       for (it = p.begin(); it != p.end(); it++){
-	if(it->second >= bestp){
+	if(it->second >= bestp || !set){
 	  bestp = it->second;
 	  bestv = it->first;
+	  set = true;
 	}
       }
       value=bestv;
